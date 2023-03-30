@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTrails.Client", "BlazingTrails.Client\BlazingTrails.Client.csproj", "{A458ED56-FE41-4661-BA4E-32553278D053}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingTrails.Client", "BlazingTrails.Client\BlazingTrails.Client.csproj", "{3983C419-18A0-44D5-8175-ABF8C6D936BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A458ED56-FE41-4661-BA4E-32553278D053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A458ED56-FE41-4661-BA4E-32553278D053}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A458ED56-FE41-4661-BA4E-32553278D053}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A458ED56-FE41-4661-BA4E-32553278D053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3983C419-18A0-44D5-8175-ABF8C6D936BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3983C419-18A0-44D5-8175-ABF8C6D936BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3983C419-18A0-44D5-8175-ABF8C6D936BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3983C419-18A0-44D5-8175-ABF8C6D936BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
