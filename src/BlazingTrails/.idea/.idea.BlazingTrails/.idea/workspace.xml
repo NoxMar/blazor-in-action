@@ -6,17 +6,16 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/images/navbar-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" afterDir="false" />
-    </list>
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch02): setup main layout" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2NkT0JLeISRZneSmoIIUF0MRBXt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -93,15 +92,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680206855813</updated>
-      <workItem from="1680206856944" duration="2358000" />
+      <workItem from="1680206856944" duration="3897000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
+      <created>1680209411948</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680209411948</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(ch02): remove scoped styles">
+      <created>1680209439523</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680209439523</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat(ch02): change title">
+      <created>1680209534589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680209534589</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(ch02): setup main layout">
+      <created>1680210751592</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680210751592</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat(ch02): add bootstrap icons" />
+    <MESSAGE value="feat(ch02): remove scoped styles" />
+    <MESSAGE value="feat(ch02): change title" />
+    <MESSAGE value="feat(ch02): setup main layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch02): setup main layout" />
   </component>
 </project>
