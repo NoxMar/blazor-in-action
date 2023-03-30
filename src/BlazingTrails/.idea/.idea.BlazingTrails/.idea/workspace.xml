@@ -6,7 +6,23 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/BlazingTrails.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/BlazingTrails.Client.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Pages/Counter.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Pages/FetchData.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Pages/Index.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Shared/MainLayout.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Shared/MainLayout.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Shared/NavMenu.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Shared/NavMenu.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Shared/SurveyPrompt.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/sample-data/weather.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680206855813</updated>
-      <workItem from="1680206856944" duration="431000" />
+      <workItem from="1680206856944" duration="1046000" />
     </task>
     <servers />
   </component>
