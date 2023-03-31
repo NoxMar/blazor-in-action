@@ -6,14 +6,21 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch02): setup main layout" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch02): setup main layout">
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/RouteInstruction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/Trail.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/_Imports.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Layout/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2NkT0JLeISRZneSmoIIUF0MRBXt" />
@@ -21,22 +28,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.sln",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.sln&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.json.schema&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/home/noxmar/.config/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/home/noxmar/.config/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/home/noxmar/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/home/noxmar/.config/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/home/noxmar/.config/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/home/noxmar/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BlazingTrails.Client">
     <configuration name="BlazingTrails.Client" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazingTrails.Client/BlazingTrails.Client.csproj" />
@@ -92,7 +100,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680206855813</updated>
-      <workItem from="1680206856944" duration="3897000" />
+      <workItem from="1680206856944" duration="5148000" />
+      <workItem from="1680259617625" duration="1911000" />
+      <workItem from="1680296940320" duration="1047000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -137,5 +147,9 @@
     <MESSAGE value="feat(ch02): change title" />
     <MESSAGE value="feat(ch02): setup main layout" />
     <option name="LAST_COMMIT_MESSAGE" value="feat(ch02): setup main layout" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,6 +1,59 @@
 @page "/"
-<h3>HomePage</h3>
+<PageTitle>Blazing Trials</PageTitle>
+
+@if (_trails is null)
+{
+    <p>Loading trails...</p>
+}
+else
+{
+    <div class="grid">
+        @foreach (var trial in _trails)
+        {
+            <div class="card shadow" style="width: 18rem">
+                <img src="@trial.Image" class="card-img-top"/>
+                <div class="card-body">
+                    <h5 class="card-title">@trial.Name</h5>
+                    <h6 class="card-subtitle mb-3 text-muted">
+                        <span class="oi oi-map-marker"></span>
+                        @trial.Location
+                    </h6>
+                    <div class="d-flex justify-content-between">
+                        <span>
+                            <span class="oi oi-clock mr-2"></span>
+                            @trial.TimeFormatted
+                        </span>
+                        <span>
+                            <span class="oi oi-infinity mr-2"></span>
+                            @trial.LengthKm km
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
 
 @code {
-    
+
+    private IEnumerable<Trail>? _trails = new[]
+    {
+        new Trail
+        {
+            Id = 1,
+            Image = "trails/1.jpg",
+            Name = "Countryside Ramble",
+            Location = "Durbach, Germany",
+            TimeInMinutes = 195,
+            LengthKm = 11,
+            Description = "A really nice walk in some very scenic countryside.",
+            Route = new[]
+            {
+                new RouteInstruction { Stage = 1, Description = "Follow the path to the fork and go left." },
+                new RouteInstruction { Stage = 2, Description = "Cross the bridge and turn right." },
+                new RouteInstruction { Stage = 3, Description = "The trail finishes at the end of the valley." }
+            }
+        }
+    };
+
 }
