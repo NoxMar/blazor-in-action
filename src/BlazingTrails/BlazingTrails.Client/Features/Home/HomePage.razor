@@ -1,4 +1,6 @@
 @page "/"
+@inject ITrailsService TrailsService;
+
 <PageTitle>Blazing Trials</PageTitle>
 
 @if (_trails is null)
@@ -36,24 +38,16 @@ else
 
 @code {
 
-    private IEnumerable<Trail>? _trails = new[]
-    {
-        new Trail
-        {
-            Id = 1,
-            Image = "trails/1.jpg",
-            Name = "Countryside Ramble",
-            Location = "Durbach, Germany",
-            TimeInMinutes = 195,
-            LengthKm = 11,
-            Description = "A really nice walk in some very scenic countryside.",
-            Route = new[]
-            {
-                new RouteInstruction { Stage = 1, Description = "Follow the path to the fork and go left." },
-                new RouteInstruction { Stage = 2, Description = "Cross the bridge and turn right." },
-                new RouteInstruction { Stage = 3, Description = "The trail finishes at the end of the valley." }
-            }
-        }
-    };
+    private IEnumerable<Trail>? _trails;
 
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _trails = await TrailsService.GetAllTrailsAsync();
+        }
+        catch (HttpRequestException)
+        {
+        }
+    }
 }
