@@ -12,26 +12,7 @@ else
     <div class="grid">
         @foreach (var trial in _trails)
         {
-            <div class="card shadow" style="width: 18rem">
-                <img src="@trial.Image" class="card-img-top"/>
-                <div class="card-body">
-                    <h5 class="card-title">@trial.Name</h5>
-                    <h6 class="card-subtitle mb-3 text-muted">
-                        <span class="oi oi-map-marker"></span>
-                        @trial.Location
-                    </h6>
-                    <div class="d-flex justify-content-between">
-                        <span>
-                            <span class="oi oi-clock mr-2"></span>
-                            @trial.TimeFormatted
-                        </span>
-                        <span>
-                            <span class="oi oi-infinity mr-2"></span>
-                            @trial.LengthKm km
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <TrailCard Trail="trial"/>
         }
     </div>
 }
