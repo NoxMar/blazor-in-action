@@ -6,14 +6,16 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Domain/ITrialsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Domain/TrailService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/trail-data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/_Imports.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Program.cs" afterDir="false" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch02): fetch trial data from server (static json file)">
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/trail-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/trail-data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +38,17 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/901f14be4e299c2fbfa43930b125a6d2c14e22318ca61f961198ff8ad94c3b8/DebugLoggerProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/App.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Domain/ITrialsService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Domain/TrailService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Home/HomePage.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/RouteInstruction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/Trail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Home/_Imports.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/_Imports.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Home/_Imports.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/ITrialsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/TrailService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -144,7 +147,7 @@
       <workItem from="1680259617625" duration="1911000" />
       <workItem from="1680296940320" duration="8429000" />
       <workItem from="1680328229948" duration="879000" />
-      <workItem from="1680329111191" duration="1615000" />
+      <workItem from="1680329111191" duration="2882000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -188,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680298030227</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat(ch02): fetch trial data from server (static json file)">
+      <created>1680331135043</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680331135043</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +214,8 @@
     <MESSAGE value="feat(ch02): setup main layout" />
     <MESSAGE value="feat(ch02): add example trials display to the home page" />
     <MESSAGE value="chore(02): add ide-specific files related to new assets" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(02): add ide-specific files related to new assets" />
+    <MESSAGE value="feat(ch02): fetch trial data from server (static json file)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch02): fetch trial data from server (static json file)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
