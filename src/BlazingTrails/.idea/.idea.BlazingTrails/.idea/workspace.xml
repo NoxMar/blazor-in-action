@@ -6,10 +6,10 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="refactor(ch02): extract trail cards as a separate component">
-      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailDetails.razor" afterDir="false" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch03): add TrailDetails component">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailCard.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailCard.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +140,7 @@
       <workItem from="1680296940320" duration="8429000" />
       <workItem from="1680328229948" duration="879000" />
       <workItem from="1680329111191" duration="5006000" />
-      <workItem from="1680384451169" duration="1279000" />
+      <workItem from="1680384451169" duration="2496000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -205,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680384596402</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat(ch03): add TrailDetails component">
+      <created>1680385778369</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680385778369</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +231,8 @@
     <MESSAGE value="feat(ch02): fetch trial data from server (static json file)" />
     <MESSAGE value="feat(ch02): add more trails" />
     <MESSAGE value="refactor(ch02): extract trail cards as a separate component" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(ch02): extract trail cards as a separate component" />
+    <MESSAGE value="feat(ch03): add TrailDetails component" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch03): add TrailDetails component" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
