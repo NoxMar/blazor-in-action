@@ -34,9 +34,6 @@ else
         }
     }
 
-    private void HandleTrailSelected(Trail trail)
-    {
-        _selectedTrail = trail;
-        StateHasChanged();
-    }
+    private void HandleTrailSelected(Trail trail) 
+        => _selectedTrail = trail;
 }
