@@ -1,4 +1,6 @@
 @page "/search/{SearchTerm}"
+@page "/search/{SearchTerm}/maxlength/{MaxLength:int}"
+
 @inject ITrailsService TrailsService;
 
 <PageTitle>Search Trails - Blazing Trails</PageTitle>
@@ -35,6 +37,9 @@ else
     
     [Parameter]
     public string SearchTerm { get; set; } = default!;
+    
+    [Parameter]
+    public int? MaxLength { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -44,6 +49,11 @@ else
             _searchResults = allTrails
                 .Where(t => t.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) ||
                             t.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+            if (MaxLength is not null)
+            {
+                _searchResults = _searchResults
+                    .Where(t => t.LengthKm <= MaxLength);
+            }
         }
         catch (HttpRequestException) { }
     }
