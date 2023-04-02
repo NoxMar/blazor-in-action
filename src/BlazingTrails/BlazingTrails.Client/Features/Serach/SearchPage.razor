@@ -1,0 +1,12 @@
+@page "/search/{SearchTerm}"
+
+<PageTitle>Search Trails - Blazing Trails</PageTitle>
+
+<h3>Serach Results for "@SearchTerm"</h3>
+
+@code {
+
+    [Parameter]
+    public string SearchTerm { get; set; } = default!;
+
+}
