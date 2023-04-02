@@ -6,8 +6,9 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add trail search to home page">
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add breadcrumbs to `SearchPage`">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchPage.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/ITrialsService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/TrailService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/TrailService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/trail-data.json" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -149,7 +150,7 @@
       <workItem from="1680328229948" duration="879000" />
       <workItem from="1680329111191" duration="5006000" />
       <workItem from="1680384451169" duration="5662000" />
-      <workItem from="1680445494152" duration="4672000" />
+      <workItem from="1680445494152" duration="5730000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -263,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680449103449</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat(ch04): add breadcrumbs to `SearchPage`">
+      <created>1680451054770</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680451054770</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +297,8 @@
     <MESSAGE value="refactor(ch03): move `TrailDetails` to scoped scss" />
     <MESSAGE value="feat(ch04): add basic `SearchPage` component" />
     <MESSAGE value="feat(ch04): add trail search to home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add trail search to home page" />
+    <MESSAGE value="feat(ch04): add breadcrumbs to `SearchPage`" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add breadcrumbs to `SearchPage`" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

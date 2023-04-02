@@ -1,4 +1,5 @@
 @page "/search/{SearchTerm}"
+@inject ITrailsService TrailsService;
 
 <PageTitle>Search Trails - Blazing Trails</PageTitle>
 
@@ -13,9 +14,41 @@
 
 <h3 class="mt-5 mb-4">Serach Results for "@SearchTerm"</h3>
 
-@code {
+@if (_searchResults == null)
+{
+    <p>Loading search results...</p>
+}
+else
+{
+    <TrailDetails Trail="_selectedTrail" />
+    <div class="grid">
+        @foreach (var trail in _searchResults)
+        {
+            <TrailCard Trail="trail" OnSelected="HandleTrailSelected"/>
+        }
+    </div>
+}
 
+@code {
+    private IEnumerable<Trail>? _searchResults = default!;
+    private Trail? _selectedTrail;
+    
     [Parameter]
     public string SearchTerm { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var allTrails = await TrailsService.GetAllTrailsAsync();
+            _searchResults = allTrails
+                .Where(t => t.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) ||
+                            t.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+        }
+        catch (HttpRequestException) { }
+    }
+
+    private void HandleTrailSelected(Trail trail)
+        => _selectedTrail = trail;
 
 }
