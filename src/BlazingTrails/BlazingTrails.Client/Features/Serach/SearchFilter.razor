@@ -6,6 +6,11 @@
            type="number"
            class="form-control"
            @bind="_maxLength" />
+    <label for="maxTime">Max time (hours)</label>
+    <input id="maxTime"
+           type="number"
+           class="form-control"
+           @bind="_maxTime" />
     <button class="btn btn-outline-primary"
             @onclick="FilterSearchResult">
         Filter
@@ -18,6 +23,7 @@
 
 @code {
     private int? _maxLength;
+    private int? _maxTime;
 
     [Parameter, EditorRequired]
     public string SearchTerm { get; set; } = default!;
@@ -28,6 +34,10 @@
         if (_maxLength.GetValueOrDefault(0) != 0)
         {
             queryParams[nameof(SearchPage.MaxLength)] = _maxLength;
+        }
+        if (_maxTime.GetValueOrDefault(0) != 0)
+        {
+            queryParams[nameof(SearchPage.MaxTime)] = _maxTime;
         }
         var uri = NavManager.GetUriWithQueryParameters(queryParams);
         NavManager.NavigateTo(uri);

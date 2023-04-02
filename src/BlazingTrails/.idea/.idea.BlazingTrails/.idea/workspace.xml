@@ -6,9 +6,7 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): use query parameters for search instead of path">
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchPage.razor" afterDir="false" />
-    </list>
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add filtering on max time" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +149,7 @@
       <workItem from="1680328229948" duration="879000" />
       <workItem from="1680329111191" duration="5006000" />
       <workItem from="1680384451169" duration="5662000" />
-      <workItem from="1680445494152" duration="11246000" />
+      <workItem from="1680445494152" duration="11618000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -307,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680459426477</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat(ch04): add filtering on max time">
+      <created>1680459904337</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680459904337</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +344,8 @@
     <MESSAGE value="feat(ch04): handle dynamic route length change in search" />
     <MESSAGE value="feat(ch04): add component for routable trail lenght filtering" />
     <MESSAGE value="feat(ch04): use query parameters for search instead of path" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): use query parameters for search instead of path" />
+    <MESSAGE value="feat(ch04): add filtering on max time" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add filtering on max time" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
