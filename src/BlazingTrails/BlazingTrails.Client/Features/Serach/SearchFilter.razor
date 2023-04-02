@@ -17,13 +17,21 @@
 </div>
 
 @code {
-    private int _maxLength;
+    private int? _maxLength;
 
     [Parameter, EditorRequired]
     public string SearchTerm { get; set; } = default!;
 
     private void FilterSearchResult()
-        => NavManager.NavigateTo($"/search/{SearchTerm}/maxlength/{_maxLength}");
+    {
+        Dictionary<string, object?> queryParams = new();
+        if (_maxLength.GetValueOrDefault(0) != 0)
+        {
+            queryParams[nameof(SearchPage.MaxLength)] = _maxLength;
+        }
+        var uri = NavManager.GetUriWithQueryParameters(queryParams);
+        NavManager.NavigateTo(uri);
+    }
 
     private void ClearSearchFilter()
     {

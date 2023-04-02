@@ -39,7 +39,7 @@ else
     [Parameter]
     public string SearchTerm { get; set; } = default!;
     
-    [Parameter]
+    [Parameter, SupplyParameterFromQuery]
     public int? MaxLength { get; set; }
 
     protected override async Task OnInitializedAsync()
