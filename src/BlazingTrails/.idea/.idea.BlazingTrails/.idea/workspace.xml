@@ -6,7 +6,10 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add filtering on max time" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add max time filters">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchFilter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchFilter.razor" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +81,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BlazingTrails.Client">
+  <component name="RunManager" selected="JavaScript Debug.BlazingTrails.Client JavaScript">
     <configuration name="BlazingTrails.Client JavaScript" type="JavascriptDebugType" uri="https://localhost:7037">
       <method v="2" />
     </configuration>
@@ -149,7 +152,7 @@
       <workItem from="1680328229948" duration="879000" />
       <workItem from="1680329111191" duration="5006000" />
       <workItem from="1680384451169" duration="5662000" />
-      <workItem from="1680445494152" duration="11618000" />
+      <workItem from="1680445494152" duration="12704000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -312,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680459904337</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat(ch04): add max time filters">
+      <created>1680460319921</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680460319921</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +355,8 @@
     <MESSAGE value="feat(ch04): add component for routable trail lenght filtering" />
     <MESSAGE value="feat(ch04): use query parameters for search instead of path" />
     <MESSAGE value="feat(ch04): add filtering on max time" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add filtering on max time" />
+    <MESSAGE value="feat(ch04): add max time filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add max time filters" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
