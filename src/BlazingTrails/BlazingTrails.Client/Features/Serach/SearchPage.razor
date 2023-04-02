@@ -15,7 +15,7 @@
 </nav>
 
 <h3 class="mt-5 mb-4">Serach Results for "@SearchTerm"</h3>
-
+<SearchFilter SearchTerm="@SearchTerm"></SearchFilter>
 @if (_searchResults == null)
 {
     <p>Loading search results...</p>
@@ -33,6 +33,7 @@ else
 
 @code {
     private IEnumerable<Trail>? _searchResults = default!;
+    private IEnumerable<Trail> _searchResultsCache = default!;
     private Trail? _selectedTrail;
     
     [Parameter]
@@ -46,16 +47,22 @@ else
         try
         {
             var allTrails = await TrailsService.GetAllTrailsAsync();
-            _searchResults = allTrails
+            _searchResultsCache = allTrails
                 .Where(t => t.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) ||
                             t.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
-            if (MaxLength is not null)
-            {
-                _searchResults = _searchResults
-                    .Where(t => t.LengthKm <= MaxLength);
-            }
+            _searchResults = _searchResultsCache;
         }
         catch (HttpRequestException) { }
+    }
+
+    protected override void OnParametersSet()
+    {
+        _searchResults = _searchResultsCache;
+        if (MaxLength is not null)
+        {
+            _searchResults = _searchResults
+                .Where(t => t.LengthKm <= MaxLength);
+        }
     }
 
     private void HandleTrailSelected(Trail trail)
