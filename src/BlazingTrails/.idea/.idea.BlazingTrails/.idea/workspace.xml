@@ -6,9 +6,7 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add component for routable trail lenght filtering">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchFilter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchFilter.razor" afterDir="false" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): use query parameters for search instead of path">
       <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/SearchPage.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/RouteInstruction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/Trail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/_Imports.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Serach/SearchFilter.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Serach/SearchPage.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -81,7 +80,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JavaScript Debug.BlazingTrails.Client JavaScript">
+  <component name="RunManager" selected=".NET Launch Settings Profile.BlazingTrails.Client">
     <configuration name="BlazingTrails.Client JavaScript" type="JavascriptDebugType" uri="https://localhost:7037">
       <method v="2" />
     </configuration>
@@ -152,7 +151,7 @@
       <workItem from="1680328229948" duration="879000" />
       <workItem from="1680329111191" duration="5006000" />
       <workItem from="1680384451169" duration="5662000" />
-      <workItem from="1680445494152" duration="10944000" />
+      <workItem from="1680445494152" duration="11246000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -301,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680455431429</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat(ch04): use query parameters for search instead of path">
+      <created>1680459426477</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680459426477</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +338,8 @@
     <MESSAGE value="feat(ch04): enable filtering trails for max length" />
     <MESSAGE value="feat(ch04): handle dynamic route length change in search" />
     <MESSAGE value="feat(ch04): add component for routable trail lenght filtering" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add component for routable trail lenght filtering" />
+    <MESSAGE value="feat(ch04): use query parameters for search instead of path" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): use query parameters for search instead of path" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

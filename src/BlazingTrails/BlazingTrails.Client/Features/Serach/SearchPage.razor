@@ -41,6 +41,9 @@ else
     
     [Parameter, SupplyParameterFromQuery]
     public int? MaxLength { get; set; }
+    
+    [Parameter, SupplyParameterFromQuery]
+    public int? MaxTime { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -62,6 +65,12 @@ else
         {
             _searchResults = _searchResults
                 .Where(t => t.LengthKm <= MaxLength);
+        }
+
+        if (MaxTime is not null)
+        {
+            _searchResults = _searchResults
+                .Where(t => t.TimeInMinutes <= MaxTime * 60);
         }
     }
 
