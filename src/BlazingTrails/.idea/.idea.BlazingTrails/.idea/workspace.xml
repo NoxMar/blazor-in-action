@@ -6,8 +6,7 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add basic `SearchPage` component">
-      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Serach/TrailSearch.razor" afterDir="false" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch04): add trail search to home page">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +31,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e6253f938894ce5e58c9d13271790eda41424ed2e9ce2743fb6d94535d562/EventCallbackOfT.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/901f14be4e299c2fbfa43930b125a6d2c14e22318ca61f961198ff8ad94c3b8/DebugLoggerProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/App.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Home/HomePage.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailCard.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailDetails.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailDetails.razor.css.map" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailSearch.razor.css.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/RouteInstruction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/Trail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/_Imports.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -77,7 +78,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BlazingTrails.Client">
+  <component name="RunManager" selected="JavaScript Debug.BlazingTrails.Client JavaScript">
     <configuration name="BlazingTrails.Client JavaScript" type="JavascriptDebugType" uri="https://localhost:7037">
       <method v="2" />
     </configuration>
@@ -148,7 +149,7 @@
       <workItem from="1680328229948" duration="879000" />
       <workItem from="1680329111191" duration="5006000" />
       <workItem from="1680384451169" duration="5662000" />
-      <workItem from="1680445494152" duration="3222000" />
+      <workItem from="1680445494152" duration="4672000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -255,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680448307048</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat(ch04): add trail search to home page">
+      <created>1680449103449</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680449103449</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +288,8 @@
     <MESSAGE value="build(ch03): add scss compilation to build" />
     <MESSAGE value="refactor(ch03): move `TrailDetails` to scoped scss" />
     <MESSAGE value="feat(ch04): add basic `SearchPage` component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add basic `SearchPage` component" />
+    <MESSAGE value="feat(ch04): add trail search to home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ch04): add trail search to home page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
