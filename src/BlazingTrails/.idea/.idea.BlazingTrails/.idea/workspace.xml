@@ -6,8 +6,13 @@
     <projectFile profileName="https">BlazingTrails.Client/BlazingTrails.Client.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="feat(ch03): open details drawer from cards">
-      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailCard.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailCard.razor" afterDir="false" />
+    <list default="true" id="1e728bab-282b-424d-b6c7-4b48cc0a71c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailDetails.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailDetails.razor.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazingTrails.Client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazingTrails/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/BlazingTrails.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/BlazingTrails.Client.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazingTrails.Client/wwwroot/css/app.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,22 +33,29 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e6253f938894ce5e58c9d13271790eda41424ed2e9ce2743fb6d94535d562/EventCallbackOfT.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/901f14be4e299c2fbfa43930b125a6d2c14e22318ca61f961198ff8ad94c3b8/DebugLoggerProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/App.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/noxmar/projects/c-sharp/blazor-in-action/src/BlazingTrails/BlazingTrails.Client/Features/Home/HomePage.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/RouteInstruction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/Trail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/HomePage.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailCard.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/TrailDetails.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/RouteInstruction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/ViewModels/Trail.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Features/Home/_Imports.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/ITrialsService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/TrailService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/Services/TrailService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazingTrails.Client/wwwroot/trails/trail-data.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectId" id="2NkT0JLeISRZneSmoIIUF0MRBXt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -138,7 +150,8 @@
       <workItem from="1680296940320" duration="8429000" />
       <workItem from="1680328229948" duration="879000" />
       <workItem from="1680329111191" duration="5006000" />
-      <workItem from="1680384451169" duration="3159000" />
+      <workItem from="1680384451169" duration="5662000" />
+      <workItem from="1680445494152" duration="980000" />
     </task>
     <task id="LOCAL-00001" summary="feat(ch02): add bootstrap icons">
       <created>1680209411948</created>
@@ -217,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680387323008</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="refactor(ch03): use `EventCallback` for Blazor callbacks">
+      <created>1680387921372</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680387921372</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +258,8 @@
     <MESSAGE value="refactor(ch02): extract trail cards as a separate component" />
     <MESSAGE value="feat(ch03): add TrailDetails component" />
     <MESSAGE value="feat(ch03): open details drawer from cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ch03): open details drawer from cards" />
+    <MESSAGE value="refactor(ch03): use `EventCallback` for Blazor callbacks" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(ch03): use `EventCallback` for Blazor callbacks" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
