@@ -13,7 +13,7 @@ public class Trail
     public int TimesInMinutes { get; set; }
     public int LengthKm { get; set; }
 
-    public ICollection<RouteInstruction> Route { get; set; } = Array.Empty<RouteInstruction>();
+    public ICollection<RouteInstruction> Route { get; set; } = default!;
 }
 
 public class TrailConfig : IEntityTypeConfiguration<Trail>
