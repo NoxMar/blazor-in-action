@@ -1,5 +1,6 @@
 @page "/"
-@inject ITrailsService TrailsService;
+@using BlazingTrails.Shared.Contracts
+@inject IMediator Mediator
 
 <PageTitle>Blazing Trials</PageTitle>
 
@@ -28,7 +29,20 @@ else
     {
         try
         {
-            _trails = await TrailsService.GetAllTrailsAsync();
+            var response = await Mediator
+                .Send(new GetTrailsRequest());
+            _trails = response.Trails
+                .Select(t => new ViewModels.Trail
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Image = t.Image,
+                    Description = t.Description,
+                    Location = t.Location,
+                    LengthKm = t.Length,
+                    Route = Array.Empty<RouteInstruction>(),
+                    TimeInMinutes = t.TimeInMinutes
+                });
         }
         catch (HttpRequestException)
         {
