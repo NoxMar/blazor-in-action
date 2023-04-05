@@ -1,10 +1,9 @@
-using System.Diagnostics;
-using System.Net;
 using System.Net.Http.Json;
+using BlazingTrails.Client.Domain;
 using BlazingTrails.Client.Features.Home.ViewModels;
-using Microsoft.Extensions.Logging.Abstractions;
+using BlazingTrails.Shared.Contracts;
 
-namespace BlazingTrails.Client.Domain;
+namespace BlazingTrails.Client.Services;
 
 public class TrailService : ITrailsService
 {
@@ -21,8 +20,19 @@ public class TrailService : ITrailsService
     {
         try
         {
-            return await _http.GetFromJsonAsync<IEnumerable<Trail>>("trails/trail-data.json")
-                   ?? Array.Empty<Trail>();
+            return (await _http.GetFromJsonAsync<GetTrailsRequest.Response>("/api/trails"))!
+                .Trails
+                .Select(t => new BlazingTrails.Client.Features.Home.ViewModels.Trail
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Image = t.Image,
+                    Description = t.Description,
+                    Location = t.Location,
+                    LengthKm = t.Length,
+                    Route = Array.Empty<RouteInstruction>(),
+                    TimeInMinutes = t.TimeInMinutes
+                });
         }
         catch (HttpRequestException e)
         {
