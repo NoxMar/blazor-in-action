@@ -44,6 +44,7 @@
                    class="fw-bold text-secondary">Length (km)</label>
             <InputNumber @bind-Value="_trail.LengthKm"
                          class="form-control" id="trailLength"/>
+            <ValidationMessage For="@(() => _trail.LengthKm)" />
         </FormFieldSet>
     </FormSection>
 
@@ -68,6 +69,7 @@
                         <InputText @bind-Value="routeInstruction.Description"
                                    class="form-control"
                                    id="routeInstructionDescription"></InputText>
+                        <ValidationMessage For="@(() => routeInstruction.Description)" />
                     </div>
                 </div>
 
@@ -86,6 +88,7 @@
                         type="button"
                         @onclick="@(() => _trail.Route.Add(new TrailDto.RouteInstruction()))">Add Instruction
                 </button>
+                <ValidationMessage For="@(() => _trail.Route)" />
             </div>
         </div>
     </FormSection>
