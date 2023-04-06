@@ -1,3 +1,4 @@
+using System.Data;
 using FluentValidation;
 
 namespace BlazingTrails.Shared.Features.ManageTrails;
@@ -19,7 +20,8 @@ public class TrailDto
     }
 }
 
-public class TrailValidator : AbstractValidator<TrailDto>
+public class TrailValidator 
+    : AbstractValidator<TrailDto>
 {
     public TrailValidator()
     {
@@ -33,5 +35,18 @@ public class TrailValidator : AbstractValidator<TrailDto>
             .WithMessage("Please enter a length");
         RuleFor(x => x.Route).NotEmpty()
             .WithMessage("Please add a route instruction");
+        RuleForEach(x => x.Route).SetValidator(new RouteInstructionValidator());
+    }
+}
+
+public class RouteInstructionValidator 
+    : AbstractValidator<TrailDto.RouteInstruction>
+{
+    public RouteInstructionValidator()
+    {
+        RuleFor(x => x.Stage).GreaterThan(0)
+            .WithMessage("Please enter positive stage value");
+        RuleFor(x => x.Description).NotEmpty()
+            .WithMessage("Please enter a description");
     }
 }
