@@ -13,35 +13,40 @@
 <h3 class="mt-5 mb-4">Add a trail</h3>
 
 <EditForm Model="_trail" OnValidSubmit="SubmitForm">
+    <FluentValidationValidator />
+    
     <FormSection Title="Basic Details"
                  HelpText="This information is used to identify the trail and can be searched to help hikers find it.">
         <FormFieldSet Width="col-6">
             <label for="trailName" class="fw-bold text-secondary">Name</label>
-            <InputText @bind-Value="_trail.Name"  class="form-control" id="trailName"/>
+            <InputText @bind-Value="_trail.Name" class="form-control" id="trailName"/>
+            <ValidationMessage For="@(() => _trail.Name)"></ValidationMessage>
         </FormFieldSet>
-        
+
         <FormFieldSet>
             <label for="trailDescription" class="fw-bold text-secondary">Description</label>
-            <InputTextArea @bind-Value="_trail.Description"  class="form-control" id="trailDescription"/>
+            <InputTextArea @bind-Value="_trail.Description" class="form-control" id="trailDescription"/>
+            <ValidationMessage For="@(() => _trail.Description)"></ValidationMessage>
         </FormFieldSet>
-        
+
         <FormFieldSet Width="col-6">
             <label for="trailLocation" class="fw-bold text-secondary">Location</label>
-            <InputText @bind-Value="_trail.Location"  class="form-control" id="trailLocation"/>
+            <InputText @bind-Value="_trail.Location" class="form-control" id="trailLocation"/>
+            <ValidationMessage For="@(() => _trail.Location)"></ValidationMessage>
         </FormFieldSet>
     </FormSection>
-    
+
     <FormSection Title="Difficulty"
                  HelpText="Help other hikers out by telling them of the trail is how long it might take them.">
-        
+
         <FormFieldSet Width="col-3">
             <label for="trailLength"
                    class="fw-bold text-secondary">Length (km)</label>
             <InputNumber @bind-Value="_trail.LengthKm"
-                         class="form-control" id="trailLength" />
+                         class="form-control" id="trailLength"/>
         </FormFieldSet>
     </FormSection>
-    
+
     <FormSection Title="Route Instructions"
                  HelpText="Route instructions are a guide for the trail. This helps hikers new to the trail stay on track.">
         @{ var i = 0; }
@@ -65,7 +70,7 @@
                                    id="routeInstructionDescription"></InputText>
                     </div>
                 </div>
-                
+
                 <div class="col-1 d-flex mt-3">
                     <button @onclick="() => _trail.Route.Remove(routeInstruction)"
                             class="btn btn-link"
@@ -80,7 +85,7 @@
                 <button class="btn btn-outline-primary"
                         type="button"
                         @onclick="@(() => _trail.Route.Add(new TrailDto.RouteInstruction()))">Add Instruction
-                    </button>
+                </button>
             </div>
         </div>
     </FormSection>
@@ -92,10 +97,10 @@
                         @onclick="@(() => _trail = new TrailDto())">Reset</button>
                 <button class="btn btn-primary"
                         type="submit">Submit</button>
-            </div>        
+            </div>
         </div>
     </div>
-    
+
 </EditForm>
 
 @code {
