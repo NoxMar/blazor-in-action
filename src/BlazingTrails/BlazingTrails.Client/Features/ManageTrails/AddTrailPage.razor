@@ -1,4 +1,5 @@
 @page "/add-trail"
+@using BlazingTrails.Client.Validation
 @inject IMediator Mediator
 
 <PageTitle>Add Trail - Blazing Trails</PageTitle>
@@ -27,7 +28,7 @@ else if (!string.IsNullOrWhiteSpace(_errorMessage))
     </div>
 }
 
-<EditForm Model="_trail" OnValidSubmit="SubmitForm">
+<EditForm EditContext="_editContext" OnValidSubmit="SubmitForm">
     <FluentValidationValidator />
     
     <FormSection Title="Basic Details"
@@ -125,6 +126,13 @@ else if (!string.IsNullOrWhiteSpace(_errorMessage))
     private TrailDto _trail = new();
     private bool _submitSuccessful;
     private string _errorMessage = string.Empty;
+    private EditContext _editContext = default!;
+    
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(_trail);
+        _editContext.SetFieldCssClassProvider(new BootstrapCssClassProvider());
+    }
 
     private async Task SubmitForm()
     {
