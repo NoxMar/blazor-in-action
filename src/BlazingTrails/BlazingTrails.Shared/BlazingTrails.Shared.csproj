@@ -15,4 +15,10 @@
       <Folder Include="Features" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Components.Web">
+        <HintPath>..\..\..\..\..\..\.nuget\packages\microsoft.aspnetcore.components.web\6.0.12\lib\net6.0\Microsoft.AspNetCore.Components.Web.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

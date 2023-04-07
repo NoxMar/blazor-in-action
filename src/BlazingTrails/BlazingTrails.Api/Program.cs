@@ -2,6 +2,7 @@ using BlazingTrails.Api.Persistence;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,5 +37,10 @@ app.UseRouting();
 
 app.MapControllers();
 app.MapFallbackToFile("index.html");
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
+    RequestPath = new PathString("/Images")
+}); 
 
 app.Run();
