@@ -1,0 +1,58 @@
+@using System.Diagnostics.CodeAnalysis
+@inherits InputBase<int>
+
+<div class="input-time">
+    <div>
+        <input class="form-control"
+               type="number"
+               min="0"
+               value="@_hours"
+               @onchange="SetHoursValue"/>
+        <label>Hours</label>
+    </div>
+    <div>
+        <input class="form-control"
+               type="number"
+               min="0"
+               max="59"
+               value="@_minutes"
+               @onchange="SetMinutesValue"/>
+        <label>Minutes</label>
+    </div>
+</div>
+
+@code {
+    private int _hours;
+    private int _minutes;
+
+    protected override void OnParametersSet()
+    {
+        if (CurrentValue <= 0)
+        {
+            return;
+        }
+        _hours = CurrentValue / 60;
+        _minutes = CurrentValue % 60;
+    }
+
+    private void SetHoursValue(ChangeEventArgs args)
+    {
+        int.TryParse(args.Value?.ToString(), out _hours);
+        SetCurrentValue();
+    }
+
+    private void SetMinutesValue(ChangeEventArgs args)
+    {
+        int.TryParse(args.Value?.ToString(), out _minutes);
+        SetCurrentValue();
+    }
+
+    private void SetCurrentValue()
+        => CurrentValue = _hours * 60 + _minutes;
+    
+    protected override bool TryParseValueFromString(string? value, out int result, [NotNullWhen(false)] out string? validationErrorMessage)
+    {
+        throw new NotImplementedException("This should never be called since this control uses custom parsing");
+    }
+
+}
