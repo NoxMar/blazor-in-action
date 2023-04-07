@@ -231,3 +231,6 @@ dist
 
 
 # End of https://www.toptal.com/developers/gitignore/api/rider,dotnetcore,node
+
+# Database for api
+src/BlazingTrails/BlazingTrails.Api/Persistence/Data/
