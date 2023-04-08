@@ -1,5 +1,4 @@
 @page "/add-trail"
-@using BlazingTrails.Client.Validation
 @inject IMediator Mediator
 
 <PageTitle>Add Trail - Blazing Trails</PageTitle>
@@ -15,17 +14,11 @@
 
 @if (_submitSuccessful)
 {
-    <div class="alert alert-success" role="alert">
-        <span class="bi bi-check-circle-fill"></span>
-        Your trail has been submitted successfully!
-    </div>
+    <SuccessAlert Message="Your trail has been added successfully!" />
 }
 else if (!string.IsNullOrWhiteSpace(_errorMessage))
 {
-    <div class="alert alert-danger" role="alert">
-        <span class="bi bi-x-circle-fill"></span>
-        @_errorMessage
-    </div>
+    <ErrorAlert Message="@_errorMessage" />
 }
 
 <TrailForm @ref="_trailForm" OnSubmit="SubmitNewTrail"/>

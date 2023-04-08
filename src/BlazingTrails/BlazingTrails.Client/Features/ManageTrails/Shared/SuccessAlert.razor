@@ -1,0 +1,11 @@
+<div class="alert alert-success" role="alert">
+    <span class="bi bi-check-circle-fill"></span>
+    @Message
+</div>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public string Message { get; set; } = default!;
+
+}

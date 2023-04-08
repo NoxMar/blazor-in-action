@@ -1,0 +1,11 @@
+<div class="alert alert-danger" role="alert">
+    <span class="bi bi-x-circle-fill"></span>
+    @Message
+</div>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public string Message { get; set; } = default!;
+
+}
