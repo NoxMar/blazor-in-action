@@ -1,7 +1,6 @@
-using System.Data;
 using FluentValidation;
 
-namespace BlazingTrails.Shared.Features.ManageTrails;
+namespace BlazingTrails.Shared.Features.ManageTrails.Shared;
 
 public class TrailDto
 {
