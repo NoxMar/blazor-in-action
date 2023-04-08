@@ -1,5 +1,5 @@
 <div class="card shadow" style="width: 18rem">
-    <img src="@(!string.IsNullOrWhiteSpace(Trail.Image) ? Trail.Image :
+    <img src="@(!string.IsNullOrWhiteSpace(Trail.Image) ? $"/images/{Trail.Image}" :
                   "https://via.placeholder.com/286x190.jpg?text=No+Image+For+Trail")" 
          class="card-img-top">
     <div class="card-body">
