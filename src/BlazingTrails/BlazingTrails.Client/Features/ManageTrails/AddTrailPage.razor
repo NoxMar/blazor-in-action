@@ -50,6 +50,12 @@ else if (!string.IsNullOrWhiteSpace(_errorMessage))
             <InputText @bind-Value="_trail.Location" class="form-control" id="trailLocation"/>
             <ValidationMessage For="@(() => _trail.Location)"></ValidationMessage>
         </FormFieldSet>
+        
+        <FormFieldSet>
+            <label for="trailImage" class="fw-bold text-secondary">Image</label>
+            <InputFile OnChange="LoadTrailImage" class="form-control-file" 
+                       id="trailImage" accept=".png,.jpg,.jpeg" />
+        </FormFieldSet>
     </FormSection>
 
     <FormSection Title="Difficulty"
@@ -134,6 +140,7 @@ else if (!string.IsNullOrWhiteSpace(_errorMessage))
     private bool _submitSuccessful;
     private string _errorMessage = string.Empty;
     private EditContext _editContext = default!;
+    private IBrowserFile? _trailImage;
     
     protected override void OnInitialized()
     {
@@ -151,8 +158,46 @@ else if (!string.IsNullOrWhiteSpace(_errorMessage))
             return;
         }
 
-        _trail = new();
-        _errorMessage = string.Empty;
+        if (_trailImage is null)
+        {
+            _submitSuccessful = true;
+            ResetForm();
+            return;
+        }
+
+        await ProcessImage(response.TrailId);
+    }
+
+    private void LoadTrailImage(InputFileChangeEventArgs e)
+        => _trailImage = e.File;
+
+
+
+        private async Task ProcessImage(int trailId)
+    {
+        if (_trailImage is null)
+        {
+            return;
+        }
+        var imageUploadResponse = await Mediator
+            .Send(new UploadTrailImageRequest(trailId, _trailImage));
+
+        if (string.IsNullOrWhiteSpace(imageUploadResponse.ImageName))
+        {
+            _errorMessage = "Trail was saved but there was a problem uploading the image.";
+            return;
+        }
+
         _submitSuccessful = true;
+        ResetForm();
+    }
+
+    private void ResetForm()
+    {
+        _trail = new TrailDto();
+        _editContext = new EditContext(_trail);
+        _editContext.SetFieldCssClassProvider(
+            new BootstrapCssClassProvider());
+        _trailImage = null;
     }
 }
