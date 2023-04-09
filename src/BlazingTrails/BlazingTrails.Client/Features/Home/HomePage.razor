@@ -13,44 +13,28 @@
 else
 {
     <TrailDetails Trail="_selectedTrail"/>
-    <ViewSwitcher>
+    <ViewSwitcher Items="_trails">
         <GridTemplate>
-            <div class="grid">
-                @foreach (var trial in _trails)
-                {
-                    <TrailCard Trail="trial" OnSelected="HandleTrailSelected"/>
-                }
-            </div>
+                    <TrailCard Trail="@context" OnSelected="HandleTrailSelected"/>
         </GridTemplate>
-        <TableTemplate>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Length</th>
-                    <th>Time</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                    @foreach (var trail in _trails)
-                    {
-                        <tr>
-                            <th scope="col">@trail.Name</th>
-                            <td>@trail.Location</td>
-                            <td>@trail.LengthKm</td>
-                            <td>@trail.TimeFormatted</td>
-                            <td>
-                                <button class="btn btn-primary" title="View" @onclick="@(() => HandleTrailSelected(trail))">
-                                    <span class="bi bi-binoculars"></span>
-                                </button>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </TableTemplate>
+        <HeaderTemplate>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Length</th>
+            <th>Time</th>
+            <th></th>
+        </HeaderTemplate>
+        <RowTemplate>
+            <th scope="col">@context.Name</th>
+            <td>@context.Location</td>
+            <td>@context.LengthKm</td>
+            <td>@context.TimeFormatted</td>
+            <td>
+                <button class="btn btn-primary" title="View" @onclick="@(() => HandleTrailSelected(context))">
+                    <span class="bi bi-binoculars"></span>
+                </button>
+            </td>
+        </RowTemplate>
     </ViewSwitcher>
 }
 
