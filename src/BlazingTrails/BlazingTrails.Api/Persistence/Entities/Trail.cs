@@ -13,6 +13,7 @@ public class Trail
     public int TimesInMinutes { get; set; }
     public int LengthKm { get; set; }
 
+    public ICollection<Waypoint> Waypoints { get; set; } = default!;
     public ICollection<RouteInstruction> Route { get; set; } = default!;
 }
 

@@ -6,6 +6,7 @@ namespace BlazingTrails.Api.Persistence;
 public class BlazingTrailsContext : DbContext
 {
     public DbSet<RouteInstruction> RouteInstructions => Set<RouteInstruction>();
+    public DbSet<Waypoint> Waypoints => Set<Waypoint>();
     public DbSet<Trail> Trails => Set<Trail>();
 
     public BlazingTrailsContext(DbContextOptions<BlazingTrailsContext> options) : base(options)
@@ -18,5 +19,6 @@ public class BlazingTrailsContext : DbContext
 
         modelBuilder.ApplyConfiguration(new TrailConfig());
         modelBuilder.ApplyConfiguration(new RouteInstructionConfig());
+        modelBuilder.ApplyConfiguration(new WaypointConfig());
     }
 }
