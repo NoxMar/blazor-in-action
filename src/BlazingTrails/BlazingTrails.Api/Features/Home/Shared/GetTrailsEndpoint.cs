@@ -1,6 +1,7 @@
 using Ardalis.ApiEndpoints;
 using BlazingTrails.Api.Persistence;
 using BlazingTrails.Shared.Contracts;
+using BlazingTrails.Shared.Features.ManageTrails.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,8 @@ public class GetTrailsEndpoint : EndpointBaseAsync
     public override async Task<GetTrailsRequest.Response> HandleAsync(int request, CancellationToken cancellationToken = new CancellationToken())
     {
         var trails = await _context.Trails
+            .AsNoTracking()
+            .Include(t => t.Waypoints)
             .ToListAsync(cancellationToken);
 
         var response = new GetTrailsRequest.Response(
@@ -31,7 +34,10 @@ public class GetTrailsEndpoint : EndpointBaseAsync
                 t.Location,
                 t.TimesInMinutes,
                 t.LengthKm,
-                t.Description
+                t.Description,
+                t.Waypoints
+                    .Select(w => new GetTrailsRequest.WaypointRead(w.Latitude, w.Longitude))
+                    .ToList()
             )));
         return response;
     }
