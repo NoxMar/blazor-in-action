@@ -1,4 +1,4 @@
-export function initialize(hostElement, routeMapComponent) 
+export function initialize(hostElement, routeMapComponent, existingEndpoints) 
 {
     hostElement.map = L.map(hostElement)
         .setView([51.700, -0.10], 3);
@@ -11,7 +11,29 @@ export function initialize(hostElement, routeMapComponent)
  
     hostElement.waypoints = [];
     hostElement.lines = [];
-
+    
+    if (existingEndpoints && existingEndpoints.length > 0)
+    {
+        existingEndpoints.forEach(cord =>
+        {
+            let waypoint = L.marker(cord);
+            waypoint.addTo(hostElement.map);
+            hostElement.waypoints.push(waypoint);
+            let line = L.polyline(hostElement.waypoints
+                .map(m => m.getLatLng()),
+                { color: 'var(--brand)'})
+                .addTo(hostElement.map);
+            hostElement.lines.push(line);
+        })
+    }
+    
+    if (hostElement.waypoints.length > 0)
+    {
+        var waypoints = new L.featureGroup(hostElement.waypoints);
+        hostElement.map.fitBounds(waypoints
+            .getBounds().pad(1));
+    }
+    
     hostElement.map.on('click', function (e) {
         let waypoint = L.marker(e.latlng);
         waypoint.addTo(hostElement.map);
@@ -43,6 +65,6 @@ export function deleteLastWaypoint(hostElement)
         }
         
         const latLon = lastWaypoint.getLatLng();
-        return `Deleted waypoint at latitude ${latLon.lat} longitude ${latLon.lng}`;
+        return { "Lat": latLon.lat, "Lng": latLon.lng };
     }
 }

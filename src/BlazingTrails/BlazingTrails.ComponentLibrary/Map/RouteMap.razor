@@ -28,6 +28,15 @@
     [Parameter]
     public string Width { get; set; } = "1000px";
 
+    [Parameter]
+    public List<LatLong> Waypoints { get; set; } = new();
+    
+    [Parameter]
+    public EventCallback<LatLong> OnWaypointAdded { get; set; }
+    
+    [Parameter]
+    public EventCallback<LatLong> OnWaypointDeleted { get; set; }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -36,7 +45,7 @@
                 "./_content/BlazingTrails.ComponentLibrary/Map/RouteMap.razor.js");
             _routeMapReference = DotNetObjectReference.Create(this);
             
-            await _routeMapModule.InvokeVoidAsync("initialize", _map, _routeMapReference);
+            await _routeMapModule.InvokeVoidAsync("initialize", _map, _routeMapReference, Waypoints);
         }
     }
 
@@ -47,13 +56,16 @@
             return;
         }
 
-        var message = await _routeMapModule.InvokeAsync<string>("deleteLastWaypoint", _map);
-        Console.WriteLine(message);
+        var waypoint = await _routeMapModule
+            .InvokeAsync<LatLong>("deleteLastWaypoint", _map, _routeMapReference);
+        await OnWaypointDeleted
+            .InvokeAsync(waypoint);
     }
 
     [JSInvokable]
-    public void WaypointAdded(decimal latitude, decimal longitude)
-        => Console.WriteLine($"Added Waypoint - Latitude: {latitude}, Longitude: {longitude}.");
+    public async Task WaypointAdded(decimal latitude, decimal longitude)
+        => await OnWaypointAdded
+            .InvokeAsync(new LatLong(latitude, longitude));
     
     public async ValueTask DisposeAsync()
     {
