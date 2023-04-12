@@ -26,7 +26,8 @@
             </div>
             @if (_activeTrail.Waypoints.Any())
             {
-                <RouteMap Waypoints="_activeTrail.Waypoints"/>
+                <RouteMap Waypoints="_activeTrail.Waypoints"
+                          IsReadOnly="true"/>
             }
             <div class="drawer-controls">
                 <button class="btn btn-secondary" @onclick="Close">Close</button>
