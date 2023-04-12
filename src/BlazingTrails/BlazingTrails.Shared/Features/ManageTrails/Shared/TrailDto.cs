@@ -10,12 +10,12 @@ public class TrailDto
     public string Location { get; set; } = string.Empty;
     public int TimeInMinutes { get; set; }
     public int LengthKm { get; set; }
-    public List<RouteInstruction> Route { get; set; } = new();
+    public List<Waypoint> Waypoints { get; set; } = new();
 
-    public class RouteInstruction
+    public class Waypoint
     {
-        public int Stage { get; set; }
-        public string Description { get; set; } = string.Empty;
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
     }
 }
 
@@ -32,22 +32,9 @@ public class TrailValidator
             .WithMessage("Please enter a location");
         RuleFor(x => x.LengthKm).GreaterThan(0)
             .WithMessage("Please enter a length");
-        RuleFor(x => x.Route).NotEmpty()
-            .WithMessage("Please add a route instruction");
+        RuleFor(x => x.Waypoints).Must(x => x.Count >= 2)
+            .WithMessage("Please add least 2 endpoints");
         RuleFor(x => x.TimeInMinutes).GreaterThan(0)
             .WithMessage("Please enter a time");
-        RuleForEach(x => x.Route).SetValidator(new RouteInstructionValidator());
-    }
-}
-
-public class RouteInstructionValidator 
-    : AbstractValidator<TrailDto.RouteInstruction>
-{
-    public RouteInstructionValidator()
-    {
-        RuleFor(x => x.Stage).GreaterThan(0)
-            .WithMessage("Please enter positive stage value");
-        RuleFor(x => x.Description).NotEmpty()
-            .WithMessage("Please enter a description");
     }
 }

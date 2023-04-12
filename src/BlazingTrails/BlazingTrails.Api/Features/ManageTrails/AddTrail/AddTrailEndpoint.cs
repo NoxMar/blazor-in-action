@@ -27,10 +27,10 @@ public class AddTrailEndpoint : EndpointBaseAsync
             Location = request.Trail.Location,
             TimesInMinutes = request.Trail.TimeInMinutes,
             LengthKm = request.Trail.LengthKm,
-            Route = request.Trail.Route.Select(r => new RouteInstruction
+            Waypoints = request.Trail.Waypoints.Select(w => new Waypoint
             {
-                Stage = r.Stage,
-                Description = r.Description,
+                Latitude = w.Latitude,
+                Longitude = w.Longitude,
             }).ToArray()
         };
 

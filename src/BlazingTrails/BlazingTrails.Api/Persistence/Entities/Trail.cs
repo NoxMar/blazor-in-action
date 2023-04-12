@@ -14,7 +14,6 @@ public class Trail
     public int LengthKm { get; set; }
 
     public ICollection<Waypoint> Waypoints { get; set; } = default!;
-    public ICollection<RouteInstruction> Route { get; set; } = default!;
 }
 
 public class TrailConfig : IEntityTypeConfiguration<Trail>
