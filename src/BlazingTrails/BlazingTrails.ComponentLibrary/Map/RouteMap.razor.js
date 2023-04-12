@@ -22,3 +22,25 @@ export function initialize(hostElement)
         hostElement.lines.push(line);
     });
 }
+
+export function deleteLastWaypoint(hostElement)
+{
+    if (hostElement.waypoints.length > 0)
+    {
+        const waypoints = hostElement.waypoints;
+        let lastWaypoint = waypoints[waypoints.length - 1];
+        hostElement.map.removeLayer(lastWaypoint);
+        hostElement.waypoints.pop();
+        
+        if (hostElement.lines.length > 0)
+        {
+            const lines = hostElement.lines;
+            let lastLine = hostElement.lines[lines.length - 1];
+            lastLine.remove(hostElement.map);
+            hostElement.lines.pop();
+        }
+        
+        const latLon = lastWaypoint.getLatLng();
+        return `Deleted waypoint at latitude ${latLon.lat} longitude ${latLon.lng}`;
+    }
+}
