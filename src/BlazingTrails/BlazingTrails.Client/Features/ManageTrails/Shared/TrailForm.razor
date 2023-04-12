@@ -1,5 +1,6 @@
 @using BlazingTrails.Client.Validation
 @using BlazingTrails.Shared.Features.ManageTrails.Shared
+@using BlazingTrails.ComponentLibrary.Map
 
 <EditForm EditContext="_editContext" OnValidSubmit="SubmitForm">
     <FluentValidationValidator />
@@ -93,6 +94,7 @@
                 <ValidationMessage For="@(() => _trail.Route)" />
             </div>
         </div>
+        <RouteMap Width="100%"></RouteMap>
     </FormSection>
     <div class="mt-4 mb-5">
         <div class="row">
