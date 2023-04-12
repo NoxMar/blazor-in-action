@@ -58,7 +58,9 @@ else
                     Description = t.Description,
                     Location = t.Location,
                     LengthKm = t.Length,
-                    Route = Array.Empty<RouteInstruction>(),
+                    Waypoints = t.Waypoints.Select(w 
+                            => new LatLong(w.Latitude, w.Longitude))
+                        .ToList(),
                     TimeInMinutes = t.TimeInMinutes
                 });
         }

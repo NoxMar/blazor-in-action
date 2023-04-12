@@ -24,6 +24,10 @@
                     <p class="mt-4">@_activeTrail.Description</p>
                 </div>
             </div>
+            @if (_activeTrail.Waypoints.Any())
+            {
+                <RouteMap Waypoints="_activeTrail.Waypoints"/>
+            }
             <div class="drawer-controls">
                 <button class="btn btn-secondary" @onclick="Close">Close</button>
             </div>
