@@ -89,7 +89,7 @@
     
     protected override void OnParametersSet()
     {
-        _trail = AppState.Trail;
+        _trail = AppState.NewTrailState.Trail;
     }
 
     private async Task SubmitForm()
@@ -98,7 +98,7 @@
     
     public void ResetForm()
     {
-        AppState.ClearTrail();
+        AppState.NewTrailState.ClearTrail();
         _trail = new TrailDto();
         _editContext = new EditContext(_trail);
         _editContext.SetFieldCssClassProvider(

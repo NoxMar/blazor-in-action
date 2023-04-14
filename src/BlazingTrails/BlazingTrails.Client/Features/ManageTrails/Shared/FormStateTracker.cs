@@ -28,7 +28,7 @@ public class FormStateTracker : ComponentBase
         var trail = (TrailDto)e.FieldIdentifier.Model;
         if (trail.Id == 0)
         {
-            AppState.Trail = trail;
+            AppState.NewTrailState.Trail = trail;
         }
     }
 }
