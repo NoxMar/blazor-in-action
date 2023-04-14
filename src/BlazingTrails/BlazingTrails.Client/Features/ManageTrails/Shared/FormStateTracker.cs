@@ -7,10 +7,8 @@ namespace BlazingTrails.Client.Features.ManageTrails.Shared;
 
 public class FormStateTracker : ComponentBase
 {
-    [Inject]
-    public AppState.AppState AppState { get; set; }
-    [CascadingParameter]
-    private EditContext CascadedEditContext { get; set; }
+    [Inject] public AppState.AppState AppState { get; set; } = default!;
+    [CascadingParameter] private EditContext CascadedEditContext { get; set; } = default!;
 
     protected override void OnInitialized()
     {
@@ -23,8 +21,12 @@ public class FormStateTracker : ComponentBase
         CascadedEditContext.OnFieldChanged += CascadedEditContext_OnFieldChanged;
     }
 
-    private void CascadedEditContext_OnFieldChanged(object sender, FieldChangedEventArgs e)
+    private void CascadedEditContext_OnFieldChanged(object? sender, FieldChangedEventArgs e)
     {
+        if (sender is null)
+        {
+            return;
+        }
         var trail = (TrailDto)e.FieldIdentifier.Model;
         if (trail.Id == 0)
         {
