@@ -4,7 +4,8 @@
 @if (AppState.FavoriteTrailsState.IsFavorite(Trail))
 {
     <button class="btn btn-outline-primary m-lg-1"
-            title="Favorite">
+            title="Favorite"
+            @onclick="@(() => AppState.FavoriteTrailsState.RemoveFavorite(Trail))">
         <i class="bi bi-heart-fill"></i>
     </button>
 }

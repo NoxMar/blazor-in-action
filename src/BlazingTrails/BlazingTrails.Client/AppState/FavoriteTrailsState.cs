@@ -44,6 +44,19 @@ public class FavoriteTrailsState
         NotifyStateHasChanged();
     }
 
+    public async Task RemoveFavorite(Trail trail)
+    {
+        var trailToRemove = _favoriteTrails.SingleOrDefault(t => t.Id == trail.Id);
+        if (trailToRemove is null)
+        {
+            return;
+        }
+
+        _favoriteTrails.Remove(trailToRemove);
+        await _localStorageService.SetItemAsync(FavoriteTrailsKey, _favoriteTrails);
+        NotifyStateHasChanged();
+    }
+
 
     public bool IsFavorite(Trail trail)
         => _favoriteTrails.Any(t => t.Id == trail.Id);
