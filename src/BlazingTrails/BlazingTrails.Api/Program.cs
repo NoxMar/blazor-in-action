@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,8 +28,13 @@ builder.Services.AddAuthentication(cfg =>
     cfg.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(cfg =>
 {
-    cfg.Authority = builder.Configuration["Auth0:Authority"];
-    cfg.Audience = builder.Configuration["Auth0:AdiIdentifier"];
+    cfg.Authority = $"https://{builder.Configuration["Auth0:Domain"]}";
+    cfg.Audience = builder.Configuration["Auth0:ApiIdentifier"];
+    cfg.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidAudience = builder.Configuration["Auth0:ApiIdentifier"],
+        ValidIssuer = builder.Configuration["Auth0:Domain"]
+    };
 });
 
 var app = builder.Build();
