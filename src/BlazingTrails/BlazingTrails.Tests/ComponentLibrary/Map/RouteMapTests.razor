@@ -23,4 +23,18 @@
         _routeMapModuleInitializeInvocation
             .VerifyInvoke("initialize", calledTimes: 1);
     }
+
+    [Fact]
+    public void OnMultipleRenders_InitializeJsComponentOnlyOnce()
+    {
+        // Arrange
+        var cut = RenderComponent<RouteMap>();
+        
+        // Act
+        cut.Render();
+        
+        // Assert
+        _routeMapModuleInitializeInvocation
+            .VerifyInvoke("initialize", calledTimes: 1);
+    }
 }
