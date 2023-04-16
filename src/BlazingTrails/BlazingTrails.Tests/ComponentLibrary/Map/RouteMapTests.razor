@@ -1,0 +1,26 @@
+@inherits TestContext
+
+@code
+{
+    private readonly JSRuntimeInvocationHandler _routeMapModuleInitializeInvocation;
+
+    public RouteMapTests()
+    {
+        var routeMapModule = JSInterop.SetupModule();
+        _routeMapModuleInitializeInvocation = routeMapModule
+            .SetupVoid("initialize", _ => true)
+            .SetVoidResult();
+    }
+
+    [Fact]
+    public void OnRender_InitializeJsMapComponent()
+    {
+        // Arrange
+        // Act
+        var cut = Render(@<RouteMap/>);
+        
+        // Assert
+        _routeMapModuleInitializeInvocation
+            .VerifyInvoke("initialize", calledTimes: 1);
+    }
+}
