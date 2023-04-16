@@ -43,4 +43,38 @@
                               <i class="bi bi-heart-fill"></i>
                           </button>);
     }
+    
+    [Fact]
+    public void ClickedWhenTrailNotMarkedAsFavorite_TrailMarkedAsFavorite()
+    {
+        // Arrange
+        var testTrail = _fixture.Create<Trail>();
+        var cut = Render(@<FavoriteButton Trail="testTrail"/>);
+        var button = cut.Find("button");
+        
+        // Act
+        button.Click();
+        
+        // Assert
+        var appState = Services.GetService<AppState>()!;
+        Assert.True(appState.FavoriteTrailsState.IsFavorite(testTrail));
+    }
+
+    [Fact]
+    public async Task ClickedWhenTrailMarkedAsFavorite_TrailRemovedFromFavorites()
+    {
+        // Arrange
+        var testTrail = _fixture.Create<Trail>();
+        var appState = this.Services.GetService<AppState>()!;
+        await appState.FavoriteTrailsState.AddFavorite(testTrail);
+
+        var cut = Render(@<FavoriteButton Trail="testTrail"/>);
+        var button = cut.Find("button");
+        
+        // Act
+        button.Click();
+        
+        // Assert
+        Assert.False(appState.FavoriteTrailsState.IsFavorite(testTrail));
+    }
 }
