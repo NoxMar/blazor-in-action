@@ -1,0 +1,46 @@
+@inherits TestContext
+@code
+{
+    private readonly Fixture _fixture = new();
+
+    public FavoriteButtonTests()
+    {
+        this.AddBlazoredLocalStorage();
+        Services.AddScoped<AppState>();
+    }
+
+    [Fact]
+    public void TrailIsNotMarkedAsFavorite_RenderOutlinedHeartButton()
+    {
+        // Arrange
+        var testTrail = _fixture.Create<Trail>();
+        
+        // Act
+        var cut = Render(@<FavoriteButton Trail="testTrail"/>);
+        
+        // Assert
+        cut.MarkupMatches(@<button class="btn btn-outline-primary m-lg-1"
+                                   title="Favorite">
+                              <i class="bi bi-heart"></i>
+                          </button>);
+    }
+
+    [Fact]
+    public async Task TrailIsMarkedAsFavorite_RenderFilledHeartButton()
+    {
+        // Arrange
+        var testTrail = _fixture.Create<Trail>();
+        var appState = Services.GetService<AppState>()!;
+        await appState.FavoriteTrailsState
+            .AddFavorite(testTrail);
+        
+        // Act
+        var cut = Render(@<FavoriteButton Trail="testTrail"/>);
+        
+        // Assert
+        cut.MarkupMatches(@<button class="btn btn-outline-primary m-lg-1"
+                                   title="Favorite">
+                              <i class="bi bi-heart-fill"></i>
+                          </button>);
+    }
+}
