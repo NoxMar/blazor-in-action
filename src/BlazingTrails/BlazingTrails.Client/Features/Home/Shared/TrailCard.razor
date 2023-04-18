@@ -1,3 +1,7 @@
+@using BlazingTrails.Shared.Features.ManageTrails.RemoveTrail
+
+@inject IMediator Mediator
+
 <div class="card shadow" style="width: 18rem">
     <img src="@(!string.IsNullOrWhiteSpace(Trail.Image) ? $"/images/{Trail.Image}" :
                   "https://via.placeholder.com/286x190.jpg?text=No+Image+For+Trail")" 
@@ -22,6 +26,11 @@
             <span class="bi bi-binoculars"></span>
         </button>
         <FavoriteButton Trail="Trail" />
+        <AuthorizeView>
+            <button class="btn btn-danger float-end" title="Delete" @onclick="DeleteTrail">
+                <i class="bi bi-trash"></i>
+            </button>
+        </AuthorizeView>
     </div>
 </div>
 
@@ -32,4 +41,8 @@
     [Parameter]
     public EventCallback<Trail> OnSelected { get; set; }
 
+    private async Task DeleteTrail()
+    {
+        await Mediator.Send(new DeleteTrailRequest(Trail.Id));
+    }
 }
