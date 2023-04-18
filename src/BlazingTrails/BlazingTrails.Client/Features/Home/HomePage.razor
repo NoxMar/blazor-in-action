@@ -48,9 +48,8 @@ else
                 <td>@trail.LengthKm</td>
                 <td>@trail.TimeFormatted</td>
                 <td>
-                    <button class="btn btn-primary" title="View" @onclick="@(() => HandleTrailSelected(trail))">
-                        <span class="bi bi-binoculars"></span>
-                    </button>
+                    <TrailButtons Trail="trail" 
+                                  OnSelected="HandleTrailSelected" />
                 </td>
             </RowTemplate>
         </ViewSwitcher>   
