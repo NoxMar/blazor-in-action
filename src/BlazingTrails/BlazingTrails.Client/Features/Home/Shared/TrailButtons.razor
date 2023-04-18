@@ -1,0 +1,28 @@
+@using BlazingTrails.Shared.Features.ManageTrails.RemoveTrail
+
+@inject IMediator Mediator
+
+
+<button class="btn btn-primary" title="View" @onclick="async () => await OnSelected.InvokeAsync(Trail)">
+    <span class="bi bi-binoculars"></span>
+</button>
+<FavoriteButton Trail="Trail" />
+<AuthorizeView>
+    <button class="btn btn-danger float-end" title="Delete" @onclick="DeleteTrail">
+        <i class="bi bi-trash"></i>
+    </button>
+</AuthorizeView>
+
+@code
+{
+    [Parameter, EditorRequired]
+    public Trail Trail { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback<Trail> OnSelected { get; set; }
+
+    private async Task DeleteTrail()
+    {
+        await Mediator.Send(new DeleteTrailRequest(Trail.Id));
+    }
+}

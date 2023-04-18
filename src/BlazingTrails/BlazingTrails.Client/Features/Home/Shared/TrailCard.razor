@@ -22,15 +22,7 @@
                 @Trail.LengthKm km
             </span>
         </div>
-        <button class="btn btn-primary" title="View" @onclick="async () => await OnSelected.InvokeAsync(Trail)">
-            <span class="bi bi-binoculars"></span>
-        </button>
-        <FavoriteButton Trail="Trail" />
-        <AuthorizeView>
-            <button class="btn btn-danger float-end" title="Delete" @onclick="DeleteTrail">
-                <i class="bi bi-trash"></i>
-            </button>
-        </AuthorizeView>
+        <TrailButtons Trail="Trail" OnSelected="OnSelected"/>
     </div>
 </div>
 
@@ -40,9 +32,4 @@
 
     [Parameter]
     public EventCallback<Trail> OnSelected { get; set; }
-
-    private async Task DeleteTrail()
-    {
-        await Mediator.Send(new DeleteTrailRequest(Trail.Id));
-    }
 }
