@@ -2,19 +2,32 @@
 
 @inject IMediator Mediator
 
-
+<Modal @ref="_deleteModal" Title="Delete confirmation">
+    <BodyTemplate>
+        <h6 class="fw-bolder">
+            Are you sure you want to delete "@Trail.Name" trail?
+        </h6>
+        <p class="text-danger">Warning: this action cannot be undone</p>
+        <div class="d-flex justify-content-between">
+            <Button Color="ButtonColor.Secondary" Outline="true" @onclick="@(() => _deleteModal.HideAsync())">Cancel</Button>
+            <Button Color="ButtonColor.Danger" Class="fw-bolder" @onclick="DeleteTrail">Confirm</Button>
+        </div>
+    </BodyTemplate>
+</Modal>
 <button class="btn btn-primary" title="View" @onclick="async () => await OnSelected.InvokeAsync(Trail)">
     <span class="bi bi-binoculars"></span>
 </button>
 <FavoriteButton Trail="Trail" />
 <AuthorizeView>
-    <button class="btn btn-danger float-end" title="Delete" @onclick="DeleteTrail">
+    <button class="btn btn-danger float-end" title="Delete" @onclick="@(() => _deleteModal.ShowAsync())">
         <i class="bi bi-trash"></i>
     </button>
 </AuthorizeView>
 
 @code
 {
+    private Modal _deleteModal = default!;
+    
     [Parameter, EditorRequired]
     public Trail Trail { get; set; } = default!;
 
@@ -23,6 +36,7 @@
 
     private async Task DeleteTrail()
     {
+        await _deleteModal.HideAsync();
         await Mediator.Send(new DeleteTrailRequest(Trail.Id));
     }
 }
