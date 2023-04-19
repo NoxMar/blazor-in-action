@@ -1,0 +1,55 @@
+<Offcanvas @ref="_offcanvas" Placement="Placement.End">
+    <BodyTemplate>
+        @if (_activeTrail is not null)
+        {
+            <div class="d-flex flex-column">
+                <TrailDetails Trail="_activeTrail"></TrailDetails>
+            </div>   
+        }
+    </BodyTemplate>
+    <FooterTemplate>
+        <Button Color="ButtonColor.Secondary" @onclick="() => _offcanvas.HideAsync()">Close</Button>
+    </FooterTemplate>
+</Offcanvas>
+
+@code {
+    private Offcanvas _offcanvas = default!;
+    private bool _isOpen;
+    private Trail? _activeTrail;
+
+    [Parameter, EditorRequired]
+    public Trail? Trail
+    {
+        get => _activeTrail;
+        set
+        {
+            _activeTrail = value;
+            _isOpen = true;
+            if (_activeTrail is not null)
+            {
+                _offcanvas.ShowAsync();
+            }
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        if (Trail is not null)
+        {
+            _activeTrail = Trail;
+            _isOpen = true;
+        }
+    }
+
+    private async Task Close()
+    {
+        await _offcanvas.HideAsync();
+    }
+
+    private void OnAfterClose()
+    {
+        _activeTrail = null;
+        _isOpen = false;
+    }
+
+}
