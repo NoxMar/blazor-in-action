@@ -21,7 +21,7 @@
 </div>
 @if (Trail.Waypoints.Any())
 {
-    <RouteMap Waypoints="_activeTrail.Waypoints"
+    <RouteMap Waypoints="Trail.Waypoints"
               IsReadOnly="true"/>
 }
 @code {
