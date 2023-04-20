@@ -30,7 +30,9 @@ else
             </HeaderTemplate>
             <RowTemplate>
                 <th scope="col">@trail.Name</th>
-                <td>@trail.Location</td>
+                <td>
+                    <NavLink class="link-secondary" href="@($"/location/{trail.Location}")">@trail.Location</NavLink>
+                </td>
                 <td>@trail.LengthKm</td>
                 <td>@trail.TimeFormatted</td>
                 <td>
