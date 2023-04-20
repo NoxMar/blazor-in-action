@@ -1,0 +1,48 @@
+@page "/location/{Name}"
+@using BlazingTrails.Client.Features.Home.ViewModels
+@using BlazingTrails.ComponentLibrary.Map
+@using BlazingTrails.Shared.Contracts
+@inject IMediator Mediator
+
+<PageTitle>Trails in "@Name"</PageTitle>
+
+<h1 class="display-4 text-center">Trails in "@Name"</h1>
+
+<TrailCollection Trails="_trails"></TrailCollection>
+
+@code {
+    
+    [Parameter]
+    public string Name { get; set; } = string.Empty;
+    
+    
+    private IEnumerable<Trail>? _trails { get; set; }
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        try
+        {
+            var response = await Mediator
+                .Send(new GetTrailsRequest());
+            _trails = response.Trails
+                .Where(t => t.Location == Name)
+                .Select(t => new Trail
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Image = t.Image,
+                    Description = t.Description,
+                    Location = t.Location,
+                    LengthKm = t.Length,
+                    Waypoints = t.Waypoints.Select(w
+                        => new LatLong(w.Latitude, w.Longitude))
+                        .ToList(),
+                    TimeInMinutes = t.TimeInMinutes
+                }).ToArray();
+        }
+        catch (HttpRequestException)
+        {
+        }
+    }
+}
