@@ -1,0 +1,37 @@
+@using BlazingTrails.Shared.Contracts
+@inject IMediator Mediator
+@inject AppState AppState
+
+@page "/favorites"
+
+<PageTitle>Your favorite trails</PageTitle>
+
+<TrailCollection Trails="_trails"/>
+
+@code {
+    private List<Trail>? _trails;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        
+        var response = await Mediator
+            .Send(new GetTrailsRequest());
+        _trails = response.Trails
+            .Where(t => AppState.FavoriteTrailsState.IsFavorite(new Trail{Id = t.Id}))
+            .Select(t => new ViewModels.Trail
+            {
+                Id = t.Id,
+                Name = t.Name,
+                Image = t.Image,
+                Description = t.Description,
+                Location = t.Location,
+                LengthKm = t.Length,
+                Waypoints = t.Waypoints.Select(w
+                    => new LatLong(w.Latitude, w.Longitude))
+                    .ToList(),
+                TimeInMinutes = t.TimeInMinutes
+            }).ToList();
+    }
+
+}
