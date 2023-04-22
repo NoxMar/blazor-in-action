@@ -32,6 +32,16 @@
                     .ToList(),
                 TimeInMinutes = t.TimeInMinutes
             }).ToList();
+        
+        HashSet<int> existingIds = new(_trails.Select(t => t.Id));
+        var favoriteTrailsCopy = AppState.FavoriteTrailsState.FavoriteTrails.ToList();
+        foreach (var trail in favoriteTrailsCopy)
+        {
+            if (!existingIds.Contains(trail.Id))
+            {
+                await AppState.FavoriteTrailsState.RemoveFavorite(trail);
+            }
+        }
     }
 
 }
