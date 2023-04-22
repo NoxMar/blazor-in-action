@@ -12,11 +12,7 @@ public class TrailDto
     public int LengthKm { get; set; }
     public List<Waypoint> Waypoints { get; set; } = new();
 
-    public class Waypoint
-    {
-        public decimal Latitude { get; set; }
-        public decimal Longitude { get; set; }
-    }
+    public record Waypoint(decimal Latitude, decimal Longitude);
 }
 
 public class TrailValidator 
