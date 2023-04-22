@@ -25,6 +25,7 @@ builder.Services.AddOidcAuthentication(cfg =>
 {
     builder.Configuration.Bind("Auth0", cfg.ProviderOptions);
     cfg.ProviderOptions.ResponseType = "code";
+    cfg.ProviderOptions.AdditionalProviderParameters.Add("audience", "https://blazingtrailsapi.com");
 });
 
 await builder.Build().RunAsync();
