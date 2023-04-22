@@ -57,7 +57,8 @@
 
     <FormSection Title="Route Instructions"
                  HelpText="Route instructions are a guide for the trail. This helps hikers new to the trail stay on track.">
-        <RouteMap Width="100%"></RouteMap>
+        <InputRouteMap @bind-Value="_trail.Waypoints" id="waypoints" />
+        <ValidationMessage For="@(() => _trail.Waypoints)" />
     </FormSection>
     <div class="mt-4 mb-5">
         <div class="row">
