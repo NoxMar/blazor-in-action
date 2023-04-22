@@ -81,15 +81,11 @@
     [Parameter, EditorRequired]
     public Func<TrailDto, IBrowserFile?, Task> OnSubmit { get; set; } = default!;
 
-    protected override void OnInitialized()
-    {
-        _editContext = new EditContext(_trail);
-        _editContext.SetFieldCssClassProvider(new BootstrapCssClassProvider());
-    }
-    
     protected override void OnParametersSet()
     {
         _trail = AppState.NewTrailState.Trail;
+        _editContext = new EditContext(_trail);
+        _editContext.SetFieldCssClassProvider(new BootstrapCssClassProvider());
     }
 
     private async Task SubmitForm()
