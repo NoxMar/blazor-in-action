@@ -1,6 +1,9 @@
 @using BlazingTrails.Client.Features.Home.ViewModels
             
-<img src="images/@Trail.Image" alt="photo from trail"/>
+@if (!String.IsNullOrWhiteSpace(Trail.Image))
+{
+    <img src="images/@Trail.Image" alt="photo from trail"/>
+}
 <div class="trail-details">
     <h3>@Trail.Name</h3>
     <h6 class="mb-3 text-muted">
