@@ -2,6 +2,7 @@ using Ardalis.ApiEndpoints;
 using BlazingTrails.Api.Persistence;
 using BlazingTrails.Api.Persistence.Entities;
 using BlazingTrails.Shared.Features.ManageTrails.AddTrail;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazingTrails.Api.Features.ManageTrails.AddTrail;
@@ -17,6 +18,7 @@ public class AddTrailEndpoint : EndpointBaseAsync
         _context = context;
     }
 
+    [Authorize]
     [HttpPost(AddTrailRequest.RouteTemplate)]
     public override async Task<int> HandleAsync(AddTrailRequest request, CancellationToken cancellationToken = new CancellationToken())
     {
