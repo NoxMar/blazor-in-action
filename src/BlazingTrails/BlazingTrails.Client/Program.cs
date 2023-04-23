@@ -1,11 +1,14 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using BlazingTrails.Client;
 using BlazingTrails.Client.AppState;
 using BlazorBootstrap;
 using Blazored.LocalStorage;
+using Mapster;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
+TypeAdapterConfig.GlobalSettings.Scan(Assembly.GetExecutingAssembly());
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");

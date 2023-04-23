@@ -27,20 +27,8 @@
                 .Send(new GetTrailsRequest());
             _trails = response.Trails
                 .Where(t => t.Location == Name)
-                .Select(t => new Trail
-                {
-                    Id = t.Id,
-                    Name = t.Name,
-                    Image = t.Image,
-                    Description = t.Description,
-                    Location = t.Location,
-                    LengthKm = t.Length,
-                    Owner = t.Owner,
-                    Waypoints = t.Waypoints.Select(w
-                        => new LatLong(w.Latitude, w.Longitude))
-                        .ToList(),
-                    TimeInMinutes = t.TimeInMinutes
-                }).ToArray();
+                .Select(t => t.Adapt<Trail>())
+                .ToArray();
         }
         catch (HttpRequestException)
         {

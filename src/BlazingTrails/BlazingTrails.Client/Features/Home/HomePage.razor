@@ -24,21 +24,7 @@
         {
             var response = await Mediator
                 .Send(new GetTrailsRequest());
-            _trails = response.Trails
-                .Select(t => new ViewModels.Trail
-                {
-                    Id = t.Id,
-                    Name = t.Name,
-                    Image = t.Image,
-                    Description = t.Description,
-                    Location = t.Location,
-                    LengthKm = t.Length,
-                    Owner = t.Owner,
-                    Waypoints = t.Waypoints.Select(w 
-                            => new LatLong(w.Latitude, w.Longitude))
-                        .ToList(),
-                    TimeInMinutes = t.TimeInMinutes
-                });
+            _trails = response.Trails.Select(t => t.Adapt<Trail>()).ToList();
         }
         catch (HttpRequestException)
         {

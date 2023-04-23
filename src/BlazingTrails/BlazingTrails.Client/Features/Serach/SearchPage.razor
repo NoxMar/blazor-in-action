@@ -52,17 +52,7 @@ else
         {
             var response = await Mediator.Send(new GetTrailsRequest());
             var allTrails = response.Trails
-                .Select(t => new Trail
-                {
-                    Id = t.Id,
-                    Name = t.Name,
-                    Image = t.Image,
-                    Description = t.Description,
-                    Location = t.Location,
-                    LengthKm = t.Length,
-                    Route = Array.Empty<RouteInstruction>(),
-                    TimeInMinutes = t.TimeInMinutes
-                });
+                .Select( t => t.Adapt<Trail>());
             _searchResultsCache = allTrails
                 .Where(t => t.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) ||
                             t.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));

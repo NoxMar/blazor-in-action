@@ -19,19 +19,8 @@
             .Send(new GetTrailsRequest());
         _trails = response.Trails
             .Where(t => AppState.FavoriteTrailsState.IsFavorite(new Trail{Id = t.Id}))
-            .Select(t => new ViewModels.Trail
-            {
-                Id = t.Id,
-                Name = t.Name,
-                Image = t.Image,
-                Description = t.Description,
-                Location = t.Location,
-                LengthKm = t.Length,
-                Waypoints = t.Waypoints.Select(w
-                    => new LatLong(w.Latitude, w.Longitude))
-                    .ToList(),
-                TimeInMinutes = t.TimeInMinutes
-            }).ToList();
+            .Select(t => t.Adapt<Trail>())
+            .ToList();
         
         HashSet<int> existingIds = new(_trails.Select(t => t.Id));
         var favoriteTrailsCopy = AppState.FavoriteTrailsState.FavoriteTrails.ToList();
