@@ -26,9 +26,14 @@ public class RemoveTrailEndpoint : EndpointBaseAsync
             .SingleOrDefaultAsync(t => t.Id == trailId, cancellationToken);
         if (trail is null)
         {
-            return NotFound("Trail does not exits");
+            return NotFound();
         }
 
+        var user = HttpContext.User.Identity!.Name!;
+        if (user != trail.Owner)
+        {
+            return Unauthorized("You are not authorized to delete this trail");
+        }
         _databaseContext.Remove(trail);
         await _databaseContext.SaveChangesAsync(cancellationToken);
         return NoContent();
