@@ -35,6 +35,7 @@ public class GetTrailsEndpoint : EndpointBaseAsync
                 t.TimesInMinutes,
                 t.LengthKm,
                 t.Description,
+                t.Owner,
                 t.Waypoints
                     .Select(w => new GetTrailsRequest.WaypointRead(w.Latitude, w.Longitude))
                     .ToList()
