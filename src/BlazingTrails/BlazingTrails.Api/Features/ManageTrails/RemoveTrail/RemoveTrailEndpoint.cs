@@ -1,6 +1,7 @@
 using Ardalis.ApiEndpoints;
 using BlazingTrails.Api.Persistence;
 using BlazingTrails.Shared.Features.ManageTrails.RemoveTrail;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,7 @@ public class RemoveTrailEndpoint : EndpointBaseAsync
         _databaseContext = databaseContext;
     }
     
+    [Authorize]
     [HttpDelete(DeleteTrailRequest.RouteTemplate)]
     public override async Task<ActionResult> HandleAsync(int trailId, CancellationToken cancellationToken = default)
     {
