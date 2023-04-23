@@ -19,9 +19,12 @@
 </button>
 <FavoriteButton Trail="Trail" />
 <AuthorizeView>
-    <button class="btn btn-danger float-end" title="Delete" @onclick="@(() => _deleteModal.ShowAsync())">
-        <i class="bi bi-trash"></i>
-    </button>
+    @if (context.User.Identity?.Name == Trail.Owner)
+    {
+        <button class="btn btn-danger float-end" title="Delete" @onclick="@(() => _deleteModal.ShowAsync())">
+            <i class="bi bi-trash"></i>
+        </button>
+    }
 </AuthorizeView>
 
 @code

@@ -35,6 +35,7 @@
                     Description = t.Description,
                     Location = t.Location,
                     LengthKm = t.Length,
+                    Owner = t.Owner,
                     Waypoints = t.Waypoints.Select(w
                         => new LatLong(w.Latitude, w.Longitude))
                         .ToList(),
