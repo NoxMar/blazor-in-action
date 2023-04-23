@@ -13,6 +13,8 @@ public class Trail
     public int TimesInMinutes { get; set; }
     public int LengthKm { get; set; }
 
+    public string Owner { get; set; } = default!;
+
     public ICollection<Waypoint> Waypoints { get; set; } = default!;
 }
 
@@ -25,5 +27,6 @@ public class TrailConfig : IEntityTypeConfiguration<Trail>
         builder.Property(x => x.Location).IsRequired();
         builder.Property(x => x.TimesInMinutes).IsRequired();
         builder.Property(x => x.LengthKm).IsRequired();
+        builder.Property(x => x.Owner).IsRequired();
     }
 }

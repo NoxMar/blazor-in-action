@@ -29,6 +29,7 @@ public class AddTrailEndpoint : EndpointBaseAsync
             Location = request.Trail.Location,
             TimesInMinutes = request.Trail.TimeInMinutes,
             LengthKm = request.Trail.LengthKm,
+            Owner = HttpContext.User.Identity!.Name!,
             Waypoints = request.Trail.Waypoints.Select(w => new Waypoint
             {
                 Latitude = w.Latitude,
