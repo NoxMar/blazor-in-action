@@ -25,7 +25,8 @@
 @if (Trail.Waypoints.Any())
 {
     <RouteMap Waypoints="Trail.Waypoints"
-              IsReadOnly="true"/>
+              IsReadOnly="true"
+              Width="100%"/>
 }
 @code {
     [Parameter, EditorRequired]
