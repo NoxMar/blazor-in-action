@@ -4,6 +4,7 @@ using MediatR;
 
 namespace BlazingTrails.Client.Features.ManageTrails.Shared;
 
+// ReSharper disable once UnusedType.Global due to begin MediatR handler
 public class UploadTrailImageHandler :
     IRequestHandler<UploadTrailImageRequest, UploadTrailImageRequest.Response>
 {
