@@ -8,7 +8,7 @@
 
 <h1 class="display-4 text-center">Trails in "@Name"</h1>
 
-<TrailCollection Trails="_trails"></TrailCollection>
+<TrailCollection Trails="Trails"></TrailCollection>
 
 @code {
     
@@ -16,7 +16,7 @@
     public string Name { get; set; } = string.Empty;
     
     
-    private IEnumerable<Trail>? _trails { get; set; }
+    private IEnumerable<Trail>? Trails { get; set; }
 
 
     protected override async Task OnParametersSetAsync()
@@ -25,7 +25,7 @@
         {
             var response = await Mediator
                 .Send(new GetTrailsRequest());
-            _trails = response.Trails
+            Trails = response.Trails
                 .Where(t => t.Location == Name)
                 .Select(t => t.Adapt<Trail>())
                 .ToArray();
