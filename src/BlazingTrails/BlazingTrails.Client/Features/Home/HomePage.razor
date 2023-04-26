@@ -12,10 +12,10 @@
     </p>
 </div>
 
-<TrailCollection Trails="_trails" />
+<TrailCollection Trails="Trails" />
 
 @code {
-    private IEnumerable<Trail>? _trails { get; set; }
+    private IEnumerable<Trail>? Trails { get; set; }
     
     
     protected override async Task OnInitializedAsync()
@@ -24,7 +24,7 @@
         {
             var response = await Mediator
                 .Send(new GetTrailsRequest());
-            _trails = response.Trails.Select(t => t.Adapt<Trail>()).ToList();
+            Trails = response.Trails.Select(t => t.Adapt<Trail>()).ToList();
         }
         catch (HttpRequestException)
         {
