@@ -5,10 +5,11 @@
 
 @code {
     private readonly Fixture _fixture = new();
+    private readonly TestAuthorizationContext _authContext;
     
     public TrailButtonsTest()
     {
-        this.AddTestAuthorization();
+        _authContext = this.AddTestAuthorization();
         JSInterop.Mode = JSRuntimeMode.Loose;
         Services.AddBlazoredLocalStorage();
         Services.AddScoped<AppState>();
@@ -27,5 +28,41 @@
         
         // Assert
         Assert.Empty(cut.FindAll("button[title=\"Delete\"]"));
+    }
+    
+    [Fact]
+    void DeleteButton_LoggedInNotAsOwner_ShouldNotRender()
+    {
+        // Arrange
+        _authContext.SetAuthorized("notOwner@example.com");
+        var trail = _fixture.Build<Trail>()
+            .With(t => t.Owner, "owner@example.com")
+            .Create();
+        
+        // Act
+        var cut = Render(@<TrailButtons Trail="trail"/>);
+        
+        // Assert
+        Assert.Empty(cut.FindAll("button[title=\"Delete\"]"));
+    }
+
+    [Fact]
+    void DeleteButton_LoggedInAsOwner_ShouldRender()
+    {
+        // Arrange
+        _authContext.SetAuthorized("test@example.com");
+        var trail = _fixture.Build<Trail>()
+            .With(t => t.Owner, "test@example.com")
+            .Create();
+        
+        // Act
+        var cut = Render(@<TrailButtons Trail="trail"/>);
+        
+        // Assert
+        cut.Find("button[title=\"Delete\"]")
+            .MarkupMatches(@<button class="btn btn-danger float-end" 
+                                    title="Delete">
+                               <i class="bi bi-trash"></i>
+                           </button>);
     }
 }
