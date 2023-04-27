@@ -1,0 +1,31 @@
+@using BlazingTrails.Client.Features.Home.ViewModels
+@using BlazorBootstrap
+@using Blazored.LocalStorage
+@inherits TestContext
+
+@code {
+    private readonly Fixture _fixture = new();
+    
+    public TrailButtonsTest()
+    {
+        this.AddTestAuthorization();
+        JSInterop.Mode = JSRuntimeMode.Loose;
+        Services.AddBlazoredLocalStorage();
+        Services.AddScoped<AppState>();
+        Services.AddBlazorBootstrap();
+        Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<TrailButtonsTest>());
+    }
+    
+    [Fact]
+    void DeleteButton_NotLoggedIn_ShouldNotRender()
+    {
+        // Arrange
+        var trail = _fixture.Create<Trail>();
+        
+        // Act
+        var cut = Render(@<TrailButtons Trail="trail"/>);
+        
+        // Assert
+        Assert.Empty(cut.FindAll("button[title=\"Delete\"]"));
+    }
+}
