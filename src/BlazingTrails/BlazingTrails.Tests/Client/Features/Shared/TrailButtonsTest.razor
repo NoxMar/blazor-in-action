@@ -4,7 +4,9 @@
 @inherits TestContext
 
 @code {
-    private readonly Fixture _fixture = new();
+
+    private readonly IFixture _fixture = new Fixture()
+        .Customize(new AutoMoqCustomization());
     private readonly TestAuthorizationContext _authContext;
     
     public TrailButtonsTest()
@@ -14,7 +16,8 @@
         Services.AddBlazoredLocalStorage();
         Services.AddScoped<AppState>();
         Services.AddBlazorBootstrap();
-        Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<TrailButtonsTest>());
+        var mediatrStub = _fixture.Create<IMediator>();
+        Services.AddSingleton(mediatrStub);
     }
     
     [Fact]
