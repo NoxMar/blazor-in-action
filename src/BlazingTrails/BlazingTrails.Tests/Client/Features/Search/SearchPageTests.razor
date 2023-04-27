@@ -1,0 +1,34 @@
+@using BlazorBootstrap
+@using Moq
+@using BlazingTrails.Shared.Contracts
+@using System.Threading
+@inherits TestContext
+
+@code {
+    private readonly IFixture _fixture = new Fixture()
+        .Customize(new AutoMoqCustomization());
+    public SearchPageTests()
+    {
+        this.AddTestAuthorization();
+        JSInterop.Mode = JSRuntimeMode.Loose;
+        Services.AddBlazorBootstrap();
+        Services.AddScoped<AppState>();
+    }
+
+    [Fact]
+    public void Header_EchoesTheSearchParameter()
+    {
+        // Arrange
+        var mediatorMock = new Mock<IMediator>();
+        mediatorMock.Setup(m => m.Send(It.IsAny<GetTrailsRequest>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync(_fixture.Create<GetTrailsRequest.Response>());
+        Services.AddSingleton(mediatorMock.Object);
+        
+        // Act
+        var cut = RenderComponent<SearchPage>(parameters 
+            => parameters.Add(p => p.SearchTerm, "Test"));
+        
+        // Assert
+        cut.Find("h3").MarkupMatches(@<h3 diff:ignoreAttributes>Search Results for "Test"</h3>);
+    }
+}
